@@ -4,13 +4,13 @@
 
 void showBanner(const char* fileName)
 {
-    FILE *fpin;
-    fpin = fopen(fileName, "rb");
+    FILE *fin;
+    fin = fopen(fileName, "rb");
 
     char banner[128];
-    fread(banner, 1, sizeof(banner), fpin);
+    fread(banner, 1, sizeof(banner), fin);
     printf("\nFILE %s BANNER: %s\n", fileName, banner);
-    fclose(fpin);
+    fclose(fin);
 }
 
 
@@ -60,8 +60,12 @@ int main(int argc, char **argv)
     if (argc != 5)
     {
         fprintf(stderr, 
-            "Usage: encrypter INPUT_FILE OUTPUT_FILE KEYWORD(string) KEY(integer)\
-            SIMPLE C encrypter. Encrypt again to decrypt the file\n");
+            "####################################################################\
+                Usage: encrypter INPUT_FILE OUTPUT_FILE KEYWORD(string) KEY(integer)\
+            ###############################108806################################\
+                SIMPLE C encrypter. Encrypt again to decrypt the file\
+            #####################################################################\
+            \n");
     }
     encrypt(argv[1], argv[2], argv[3],atoi(argv[4]));
     return EXIT_SUCCESS;
