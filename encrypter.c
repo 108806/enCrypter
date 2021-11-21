@@ -2,11 +2,6 @@
 #include <stdlib.h>
 #include <string.h>
 
-#define SIZE(a) sizeof(a) / sizeof(a[0])
-
-//84njr49tm
-//8449
-
 void showBanner(const char* fileName)
 {
     FILE *fpin;
@@ -65,8 +60,9 @@ int main(int argc, char **argv)
     if (argc != 5)
     {
         fprintf(stderr, 
-            "Usage: my_encrypt INPUT_FILE OUTPUT_FILE KEYWORD(string) KEY(integer)\n");
+            "Usage: encrypter INPUT_FILE OUTPUT_FILE KEYWORD(string) KEY(integer)\
+            SIMPLE C encrypter. Encrypt again to decrypt the file\n");
     }
     encrypt(argv[1], argv[2], argv[3],atoi(argv[4]));
-    return 0;
+    return EXIT_SUCCESS;
 }
